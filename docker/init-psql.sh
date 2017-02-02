@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
+    CREATE DATABASE posa;
+    GRANT ALL PRIVILEGES ON DATABASE posa TO $POSTGRES_USER;
+EOSQL
