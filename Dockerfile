@@ -17,7 +17,7 @@ COPY mix.* /usr/src/app/
 RUN mix deps.get --only prod
 RUN mix deps.compile --only prod
 COPY . /usr/src/app/
-RUN mix compile
+RUN MIX_ENV=prod mix compile
 RUN mix compile.protocols
 
-CMD mix ecto.migrate && elixir -pa _build/prod/consolidated -S mix phoenix.server
+CMD MIX_ENV=prod mix ecto.migrate && elixir -pa _build/prod/consolidated -S MIX_ENV=prod mix phoenix.server
