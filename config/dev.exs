@@ -24,8 +24,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :posa, Posa.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
+  username: "posa",
   password: "posa",
   database: "posa",
-  hostname: "localhost",
+  hostname: System.get_env('DB_HOSTNAME'),
   pool_size: 10
