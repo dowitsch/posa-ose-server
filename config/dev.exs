@@ -27,5 +27,5 @@ config :posa, Posa.Repo,
   username: "posa",
   password: "posa",
   database: "posa",
-  hostname: System.get_env('DB_HOSTNAME'),
+  hostname: System.get_env("DB_HOSTNAME"),
   pool_size: 10
